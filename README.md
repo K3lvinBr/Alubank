@@ -1,16 +1,12 @@
-# alubank
+# 💰 Alubank 💰
 
-A new Flutter project.
+Interface de banco usando Flutter
 
-## Getting Started
+![](to_README/image_alubank.png)
 
-This project is a starting point for a Flutter application.
+## 🛠️ Abrir e rodar o projeto
 
-A few resources to get you started if this is your first Flutter project:
+**Para executar este projeto você precisa:**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Ter uma IDE, que pode ser o  [Android Studio](https://developer.android.com/) instalado na sua máquina
+- Ter a [SDK do Flutter](https://docs.flutter.dev/get-started/install) na versão 3.0.0
