@@ -1,8 +1,17 @@
 import 'package:alubank/components/box_card.dart';
+import 'package:alubank/data/bank.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class AccountActions extends StatelessWidget {
+class AccountActions extends StatefulWidget {
   const AccountActions({Key? key}) : super(key: key);
+
+  @override
+  State<AccountActions> createState() => _AccountActionsState();
+}
+
+class _AccountActionsState extends State<AccountActions> {
+  double money = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +31,20 @@ class AccountActions extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Provider.of<BankModel>(context, listen: false)
+                        .deposit(money);
+                  },
                   child: const BoxCard(
                       boxContent: _AccountActionsContent(
                     icon: Icon(Icons.account_balance_wallet),
                     text: 'Depositar',
                   ))),
               InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Provider.of<BankModel>(context, listen: false)
+                        .transfer(money);
+                  },
                   child: const BoxCard(
                       boxContent: _AccountActionsContent(
                     icon: Icon(Icons.cached),

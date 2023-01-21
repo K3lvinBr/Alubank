@@ -1,9 +1,16 @@
+import 'package:alubank/data/bank.dart';
 import 'package:alubank/themes/theme_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class Header extends StatelessWidget {
+class Header extends StatefulWidget {
   const Header({Key? key}) : super(key: key);
 
+  @override
+  State<Header> createState() => _HeaderState();
+}
+
+class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,11 +28,14 @@ class Header extends StatelessWidget {
               Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text.rich(TextSpan(text: '\$', children: <TextSpan>[
-                      TextSpan(
-                          text: '1000.00',
-                          style: Theme.of(context).textTheme.bodyLarge)
-                    ])),
+                    Consumer<BankModel>(builder: (context, value, _) {
+                      return Text.rich(
+                          TextSpan(text: '\$', children: <TextSpan>[
+                        TextSpan(
+                            text: value.balance.toString(),
+                            style: Theme.of(context).textTheme.bodyLarge)
+                      ]));
+                    }),
                     const Text(
                       'Balanço disponivel',
                     )

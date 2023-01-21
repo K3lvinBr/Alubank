@@ -1,9 +1,14 @@
+import 'package:alubank/data/bank.dart';
 import 'package:alubank/screens/Home.dart';
 import 'package:alubank/themes/my_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const Alubank());
+  runApp(ChangeNotifierProvider(
+    create: (context) => BankModel(),
+    child: Alubank(),
+  ));
 }
 
 class Alubank extends StatelessWidget {
