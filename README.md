@@ -1,6 +1,6 @@
 # 💰 Alubank 💰
 
-Interface de banco usando Flutter
+Interface de banco usando Flutter, para aprender mais sobre temas, reutilização de componentes, testes de unidades e de widgets.
 
 ![](to_README/image_alubank.png)
 
